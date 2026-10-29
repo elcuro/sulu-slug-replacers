@@ -1,0 +1,53 @@
+{
+    "name": "elcuro/sulu-slug-replacers",
+    "description": "Configure the character replacers Sulu applies when generating URL slugs (e.g. ä → a instead of ae)",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "keywords": [
+        "sulu",
+        "slug",
+        "resource-locator",
+        "transliteration"
+    ],
+    "authors": [
+        {
+            "name": "Juraj Jancuska"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "symfony/config": "^5.4 || ^6.4 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^5.4 || ^6.4 || ^7.0 || ^8.0",
+        "symfony/http-kernel": "^5.4 || ^6.4 || ^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^10.5 || ^11.0 || ^12.0"
+    },
+    "suggest": {
+        "sulu/sulu": "Supported versions: ^2.5 and ^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elcuro\\SuluSlugReplacersBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elcuro\\SuluSlugReplacersBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpstan": "phpstan analyse",
+        "lint": [
+            "@phpstan",
+            "php-cs-fixer fix --dry-run --diff"
+        ],
+        "fix": "php-cs-fixer fix"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
